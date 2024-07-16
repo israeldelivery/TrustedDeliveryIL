@@ -1,1 +1,192 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Israel Delivery</title>
+    <link rel="icon" href="delivery_logo.jpg" type="image/jpeg">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .logo {
+            text-align: center;
+            margin: 50px auto 10px auto; /* הרחקת הלוגו מהבאנר */
+        }
+        .logo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        section {
+            padding: 20px 20px;
+            text-align: center;
+            background: #f7f7f7;
+            flex: 1;
+        }
+        section h1 {
+            font-size: 36px;
+            margin-top: 10px; /* קרוב יותר ללוגו */
+            margin-bottom: 20px;
+            color: #333;
+        }
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #555;
+        }
+        .contact-info p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            width: 100%;
+        }
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        form input, form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        form textarea {
+            height: 100px;
+        }
+        form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px; /* הגדלת הרווח בין הכפתור לתמונות */
+        }
+        .images img {
+            width: 30%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #fff;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+        }
+        .floating-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .floating-icons a {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .floating-icons img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE0QV7H1EM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GE0QV7H1EM');
+    </script>
+</head>
+<body>
+    <header>
+        <img src="baner_1.jpg" alt="Israel Delivery Banner">
+    </header>
+
+    <div class="logo">
+        <img src="delivery_logo.jpg" alt="Israel Delivery Logo">
+    </div>
+
+    <section>
+        <h1>Welcome to Israel Delivery</h1>
+        <p>Experience the most comprehensive, professional, and reliable delivery service across Israel. Whether you're sending important documents, valuable packages, or goods of any kind, our top-tier service guarantees fast and secure deliveries. Our dedicated team and advanced logistics ensure your items reach their destination on time and in perfect condition. Trust us to handle all your delivery needs with the utmost care and efficiency. Join our satisfied customers and discover why Israel Delivery is the best choice for all your shipping needs.</p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:israeldelivery2020@gmail.com">israeldelivery2020@gmail.com</a></p>
+            <p>Phone: <a href="tel:+0502638644">050-263-8644</a></p>
+        </div>
+
+        <form action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" method="post" target="_blank">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="entry.YOUR_NAME_FIELD_ID" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="entry.YOUR_EMAIL_FIELD_ID" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="entry.YOUR_MESSAGE_FIELD_ID" required></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="images" style="margin-top: 50px;">
+            <img src="image_1.jpg" alt="Image 1">
+            <img src="image_2.jpg" alt="Image 2">
+            <img src="image_3.jpg" alt="Image 3">
+        </div>
+    </section>
+
+    <footer>
+        <p>Israel Delivery. All rights reserved 2024 ©</p>
+    </footer>
+
+    <div class="floating-icons">
+        <a href="https://wa.me/0502638644?text=Hello%20Israel%20Delivery" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a href="tel:+0502638644">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Phone_icon_black.svg/512px-Phone_icon_black.svg.png" alt="Call">
+        </a>
+        <a href="https://www.google.com/search?q=Israel+Delivery+reviews" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Star_icon-72a7cf.svg/1200px-Star_icon-72a7cf.svg.png" alt="Google Reviews">
+        </a>
+    </div>
+</body>
+</html>
