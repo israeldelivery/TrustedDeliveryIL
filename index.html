@@ -23,6 +23,7 @@
         header {
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding-top: 20px; /* רווח בין ראש האתר לבאנר */
         }
         header img {
             width: 100%;
@@ -81,6 +82,9 @@
         form label .required {
             color: red;
         }
+        form label .black {
+            color: black;
+        }
         form input, form textarea {
             width: 100%;
             padding: 10px;
@@ -115,6 +119,9 @@
             max-width: 100px;
             border-radius: 10px;
         }
+        .images + footer {
+            margin-top: 50px; /* רווח בין התמונות לשורה התחתונה של כל הזכויות שמורות */
+        }
         footer {
             background-color: #fff;
             color: #000;
@@ -136,8 +143,8 @@
             margin-bottom: 10px;
         }
         .floating-icons img {
-            width: 50px;
-            height: 50px;
+            width: 70px; /* הגדלת האייקון של הוואטסאפ */
+            height: 70px;
         }
         .required-note {
             margin-top: 15px;
@@ -146,6 +153,9 @@
         }
         .required-note .required {
             color: red;
+        }
+        .required-note .black {
+            color: black;
         }
         @media (max-width: 768px) {
             .logo img {
@@ -159,8 +169,8 @@
                 padding: 10px;
             }
             .floating-icons img {
-                width: 40px;
-                height: 40px;
+                width: 50px; /* גודל מתאים לטלפונים */
+                height: 50px;
             }
         }
     </style>
@@ -194,17 +204,17 @@
     <section id="contactForm" class="contact">
         <h2>Contact Us</h2>
         <form action="https://docs.google.com/forms/d/e/1FAIpQLScZt6agqo2_4OSJsbCurrYFUDznxmaJdCBW3iVO5UVOiYmiQA/formResponse" method="post" target="_self">
-            <label for="name">Name<span class="required">(*</span>)</label>
+            <label for="name">Name<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
             <input type="text" id="name" name="entry.1200704287" required>
-            <label for="phone">Phone<span class="required">(*</span>)</label>
+            <label for="phone">Phone<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
             <input type="tel" id="phone" name="entry.68737920" required>
-            <label for="email">Email<span class="required">(*</span>)</label>
+            <label for="email">Email<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
             <input type="email" id="email" name="entry.500345010" required>
-            <label for="comments">Message<span class="required">(*</span>)</label>
+            <label for="comments">Message<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
             <textarea id="comments" name="entry.285978108" required>Hello, I would like to inquire about your delivery services. Please contact me with more details.</textarea>
             <button type="submit">Submit</button>
         </form>
-        <div class="required-note">Fields marked with <span class="required">(*</span>) are required.</div>
+        <div class="required-note">Fields marked with <span class="black">(</span><span class="required">*</span><span class="black">)</span> are required.</div>
     </section>
 
     <section class="images">
