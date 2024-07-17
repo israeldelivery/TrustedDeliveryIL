@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Israel Delivery</title>
+    <title>Israel Delivery - Professional Delivery Service in Israel</title>
+    <meta name="description" content="Experience the most comprehensive, professional, and reliable delivery service across Israel. Our delivery service guarantees fast and secure deliveries of documents, packages, and goods.">
     <link rel="icon" href="delivery_logo.jpg" type="image/jpeg">
     <meta property="og:title" content="Israel Delivery">
     <meta property="og:description" content="Experience the most comprehensive, professional, and reliable delivery service across Israel.">
     <meta property="og:image" content="https://israeldelivery.github.io/TrustedDeliveryIL/delivery_logo.jpg">
     <meta property="og:url" content="https://israeldelivery.github.io/TrustedDeliveryIL">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="google-site-verification" content="googlecc52c210baa67885.html">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -23,7 +25,7 @@
         header {
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding-top: 20px; /* רווח בין ראש האתר לבאנר */
+            padding-top: 20px;
         }
         header img {
             width: 100%;
@@ -33,14 +35,31 @@
         }
         .logo {
             text-align: center;
-            margin: -50px auto 20px auto; /* כוונון המרווח בין הבאנר לבין הלוגו */
+            margin: -50px auto 20px auto;
         }
         .logo img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid white; /* מסגרת לבנה סביב הלוגו */
+            border: 5px solid white;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav ol {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+        }
+        nav ol li {
+            display: inline;
+            font-size: 0.9em;
+        }
+        nav ol li+li:before {
+            content: " > ";
+            padding: 0 5px;
         }
         section {
             padding: 20px 20px;
@@ -79,7 +98,7 @@
             height: 50px;
         }
         .contact-info a img {
-            width: 32px; /* הגדלת הסמלים בתוך העיגולים */
+            width: 32px;
             height: 32px;
         }
         form {
@@ -113,6 +132,9 @@
             font-size: 1em;
             box-sizing: border-box;
         }
+        form input:focus, form textarea:focus {
+            outline: 3px solid #007bff;
+        }
         form textarea {
             height: 100px;
         }
@@ -139,7 +161,7 @@
             border-radius: 10px;
         }
         .images + footer {
-            margin-top: 50px; /* רווח בין התמונות לשורה התחתונה של כל הזכויות שמורות */
+            margin-top: 50px;
         }
         footer {
             background-color: #fff;
@@ -190,6 +212,21 @@
         gtag('js', new Date());
         gtag('config', 'G-GE0QV7H1EM');
     </script>
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Israel Delivery",
+      "url": "https://israeldelivery.github.io/TrustedDeliveryIL",
+      "logo": "https://israeldelivery.github.io/TrustedDeliveryIL/delivery_logo.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+972502638644",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -199,6 +236,13 @@
     <div class="logo">
         <img src="delivery_logo.jpg" alt="Israel Delivery Logo">
     </div>
+
+    <nav aria-label="breadcrumb">
+        <ol>
+            <li><a href="https://israeldelivery.github.io/TrustedDeliveryIL">Home</a></li>
+            <li aria-current="page">Welcome</li>
+        </ol>
+    </nav>
 
     <section>
         <h1>Welcome to Israel Delivery</h1>
@@ -223,22 +267,22 @@
         <h2>Contact Us</h2>
         <form action="https://docs.google.com/forms/d/e/1FAIpQLScZt6agqo2_4OSJsbCurrYFUDznxmaJdCBW3iVO5UVOiYmiQA/formResponse" method="post" target="_self">
             <label for="name">Name<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
-            <input type="text" id="name" name="entry.1200704287" required>
+            <input type="text" id="name" name="entry.1200704287" required aria-required="true">
             <label for="phone">Phone<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
-            <input type="tel" id="phone" name="entry.68737920" required>
+            <input type="tel" id="phone" name="entry.68737920" required aria-required="true">
             <label for="email">Email<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
-            <input type="email" id="email" name="entry.500345010" required>
+            <input type="email" id="email" name="entry.500345010" required aria-required="true">
             <label for="comments">Message<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
-            <textarea id="comments" name="entry.285978108" required>Hello, I would like to inquire about your delivery services. Please contact me with more details.</textarea>
+            <textarea id="comments" name="entry.285978108" required aria-required="true">Hello, I would like to inquire about your delivery services. Please contact me with more details.</textarea>
             <button type="submit">Submit</button>
         </form>
         <div class="required-note">Fields marked with <span class="black">(</span><span class="required">*</span><span class="black">)</span> are required.</div>
     </section>
 
     <section class="images">
-        <img src="image_1.jpg" alt="Image 1">
-        <img src="image_2.jpg" alt="Image 2">
-        <img src="image_3.jpg" alt="Image 3">
+        <img src="image_1.jpg" alt="Delivery Service Image 1">
+        <img src="image_2.jpg" alt="Delivery Service Image 2">
+        <img src="image_3.jpg" alt="Delivery Service Image 3">
     </section>
 
     <footer>
