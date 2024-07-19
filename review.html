@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Israel Delivery</title>
     <meta name="description" content="Read and leave reviews for Israel Delivery, the best delivery service in Israel.">
     <meta property="og:title" content="Review Israel Delivery">
     <meta property="og:description" content="Read and leave reviews for Israel Delivery, the best delivery service in Israel.">
-    <meta property="og:image" content="https://israeldelivery.github.io/TrustedDeliveryIL/delivery_logo.jpg">
+    <meta property="og:image" content="person.jpg">
     <meta property="og:url" content="https://israeldelivery.github.io/TrustedDeliveryIL/review.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="delivery_logo.jpg" type="image/jpeg">
@@ -21,31 +21,45 @@
             flex-direction: column;
             min-height: 100vh;
             background-color: #f7f7f7;
+            direction: ltr;
+            text-align: left;
         }
+
         header {
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 20px;
             background-color: #007bff;
             color: white;
+            max-width: 800px;
+            margin: 0 auto;
         }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
         nav ol {
             list-style: none;
             padding: 0;
             display: flex;
             justify-content: center;
+            margin: 10px 0 0;
         }
+
         nav ol li {
             display: inline;
             font-size: 1em;
         }
+
         nav ol li+li:before {
             content: " > ";
             padding: 0 5px;
         }
-        .explanation {
-            max-width: 600px;
-            width: 100%;
+
+        .explanation, .review-box {
+            max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
@@ -53,116 +67,92 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             text-align: left;
         }
-        .explanation h1 {
-            font-size: 1.4em;
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-        .explanation h2 {
-            font-size: 1.2em;
-            color: #007bff;
-            margin-bottom: 10px;
-        }
+
         .explanation p {
-            font-size: 1em;
-            color: #000;
-            margin-bottom: 20px;
+            font-size: 1.2em;
+            line-height: 2.2;
+            color: #555;
+            margin: 15px 0;
         }
-        .review-box {
-            background: #fff;
-            padding: 20px;
+
+        .person-image {
+            display: block;
+            margin: 0 auto 10px;
+            max-width: 80%;
+            height: auto;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 600px;
-            width: 100%;
-            box-sizing: border-box;
-            margin: 20px auto;
-            position: relative;
         }
+
+        .stars-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .star {
+            font-size: 2em;
+            color: gold;
+            margin: 0 5px;
+        }
+
+        .star.empty {
+            color: #ccc; /* Empty star color */
+        }
+
         .review-box .review-text {
             font-size: 1.2em;
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 20px;
             color: #555;
-            height: 4em; /* Adjust height to fit the longest possible review */
+            height: 4em;
             overflow: hidden;
+            direction: ltr; /* Left-to-right reading direction */
+            text-align: left; /* Left alignment */
         }
-        .review-box .action-btn {
+
+        .review-box button {
             background-color: #007bff;
             color: #fff;
             border: none;
             cursor: pointer;
             font-size: 1em;
-            padding: 10px 20px;
+            padding: 10px;
             border-radius: 5px;
-            margin: 5px;
+            margin: 10px 0;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
         }
+
         .review-box .change-review-btn {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-        }
-        .review-box .change-review-btn img {
-            width: 30px;
-            height: 30px;
-        }
-        .steps-container {
-            margin: 20px auto;
-            text-align: center;
-            position: relative;
-        }
-        .steps-container .step-content {
-            display: none;
-        }
-        .steps-container .step-content.active {
-            display: block;
-        }
-        .steps-navigation {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .steps-navigation .step {
-            width: 20px;
-            height: 20px;
-            background-color: #ddd;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
-        .steps-navigation .step.active {
             background-color: #007bff;
         }
-        .arrow {
-            font-size: 1.5em;
-            cursor: pointer;
-            margin: 0 10px;
-            user-select: none;
-            color: #007bff;
-        }
+
         footer {
             background-color: #007bff;
             color: white;
             padding: 20px;
             text-align: center;
             margin-top: auto;
+            max-width: 800px;
+            margin: 0 auto;
         }
+
+        footer p {
+            font-size: 1.1em;
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
             .explanation p, .review-box p {
                 font-size: 0.9em;
             }
+
             .review-box button {
                 font-size: 0.9em;
                 padding: 8px 16px;
             }
-            .steps-navigation .step {
-                width: 15px;
-                height: 15px;
-            }
-            .arrow {
-                font-size: 1.2em;
+
+            .stars-container .star {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -212,7 +202,7 @@
         function copyReview() {
             const reviewText = document.getElementById('reviewText').innerText;
             navigator.clipboard.writeText(reviewText).then(() => {
-                alert('Review text copied to clipboard!');
+                alert('The review text has been copied to clipboard!');
             });
         }
 
@@ -220,85 +210,53 @@
             window.open('https://g.page/r/CWQ2boX-b6ZxEBM/review', '_blank');
         }
 
-        let currentStep = 0;
-        function showNextStep() {
-            const buttons = document.querySelectorAll('.steps-container .step-content');
-            if (currentStep < buttons.length - 1) {
-                buttons[currentStep].classList.remove('active');
-                currentStep++;
-                buttons[currentStep].classList.add('active');
-                updateStepsIndicator();
-            }
-        }
-
-        function showPreviousStep() {
-            const buttons = document.querySelectorAll('.steps-container .step-content');
-            if (currentStep > 0) {
-                buttons[currentStep].classList.remove('active');
-                currentStep--;
-                buttons[currentStep].classList.add('active');
-                updateStepsIndicator();
-            }
-        }
-
-        function updateStepsIndicator() {
-            const steps = document.querySelectorAll('.steps-navigation .step');
-            steps.forEach((step, index) => {
-                step.classList.remove('active');
-                if (index === currentStep) {
-                    step.classList.add('active');
-                }
-            });
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('reviewText').innerText = getRandomReview();
-            document.querySelector('.steps-container .step-content').classList.add('active');
-            updateStepsIndicator();
         });
     </script>
 </head>
 <body>
     <header>
-        <h1>Review Israel Delivery</h1>
+        <h1>Review Israel Delivery Services</h1>
+        <nav>
+            <ol>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li>Service Review</li>
+            </ol>
+        </nav>
     </header>
-    <section>
-        <div class="explanation">
-            <h1>Review Process Explanation</h1>
-            <h2>1. Copy the Review</h2>
-            <p>Click "Copy Review" to copy the selected review text to your clipboard.</p>
-            
-            <h2>2. Go to Google Review Page</h2>
-            <p>Click "Go to Google Review Page" to open the Google review page.</p>
-            
-            <h2>3. Leave a Review on Google</h2>
-            <p>On the Google review page, give a 5-star rating, paste your copied review in the text box, and submit.</p>
-            
-            <p>You can navigate back and forth between the steps using the arrows below.</p>
-        </div>
-        <div class="review-box">
+
+    <main>
+        <section class="explanation">
+            <img src="person.jpg" alt="Customer" class="person-image">
+            <div class="stars-container">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+            </div>
+            <p>Thank you very much for your positive review of our delivery services! We greatly appreciate your feedback and invite you to share your experience with others.
+            </p>
+            <p>
+                For your convenience, you can select a positive review here, copy it, and easily transfer it to the Google review site. Just click the button to go to the site, where you can give us 5 stars and paste your review.
+            </p>
+            <p>
+                Thank you for your support and participation!
+            </p>
+        </section>
+
+        <section class="review-box">
             <p id="reviewText" class="review-text"></p>
-            <button class="change-review-btn" onclick="changeReview()">
-                <img src="sync.png" alt="Change Review">
-            </button>
-            <div class="steps-container">
-                <div id="step-1" class="step-content active">
-                    <button class="action-btn" onclick="copyReview(); showNextStep()">Copy Review</button>
-                </div>
-                <div id="step-2" class="step-content">
-                    <button class="action-btn" onclick="goToGoogleReview()">Go to Google Review Page</button>
-                </div>
-            </div>
-            <div class="steps-navigation">
-                <span class="arrow" onclick="showPreviousStep()">&#9664;</span>
-                <div class="step active"></div>
-                <div class="step"></div>
-                <span class="arrow" onclick="showNextStep()">&#9654;</span>
-            </div>
-        </div>
-    </section>
+            <button onclick="changeReview()">Change Review</button>
+            <button onclick="copyReview()">Copy Review</button>
+            <button class="change-review-btn" onclick="goToGoogleReview()">Write a Review on Google</button>
+        </section>
+    </main>
+
     <footer>
-        <p>Israel Delivery. All rights reserved 2024 ©</p>
+        <p>© 2024 Israel Delivery Services - All rights reserved</p>
     </footer>
 </body>
 </html>
