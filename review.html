@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device=1.0">
     <title>Review Israel Delivery</title>
     <meta name="description" content="Read and leave reviews for Israel Delivery, the best delivery service in Israel.">
     <meta property="og:title" content="Review Israel Delivery">
@@ -25,41 +25,48 @@
         header {
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding-top: 20px;
-        }
-        header img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-        }
-        .logo {
-            text-align: center;
-            margin: -35px auto 20px auto; /* Adjusted margin to match index.html */
-        }
-        .logo img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-        }
-        nav {
-            margin: 20px 0;
-            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
         }
         nav ol {
             list-style: none;
             padding: 0;
-            display: inline-block;
+            display: flex;
+            justify-content: center;
         }
         nav ol li {
             display: inline;
-            font-size: 0.9em;
+            font-size: 1em;
         }
         nav ol li+li:before {
             content: " > ";
             padding: 0 5px;
+        }
+        .explanation {
+            max-width: 600px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .explanation h1 {
+            font-size: 1.4em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .explanation h2 {
+            font-size: 1.2em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .explanation p {
+            font-size: 1em;
+            color: #000;
+            margin-bottom: 20px;
         }
         .review-box {
             background: #fff;
@@ -71,14 +78,17 @@
             width: 100%;
             box-sizing: border-box;
             margin: 20px auto;
+            position: relative;
         }
-        .review-box p {
+        .review-box .review-text {
             font-size: 1.2em;
             line-height: 1.6;
             margin-bottom: 20px;
             color: #555;
+            height: 4em; /* Adjust height to fit the longest possible review */
+            overflow: hidden;
         }
-        .review-box button {
+        .review-box .action-btn {
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -88,46 +98,71 @@
             border-radius: 5px;
             margin: 5px;
         }
-        .images-container {
-            background-color: #f7f7f7; /* Change the background color to match the index page */
-            padding: 20px 0; /* Add padding for spacing */
+        .review-box .change-review-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
         }
-        .images {
+        .review-box .change-review-btn img {
+            width: 30px;
+            height: 30px;
+        }
+        .steps-container {
+            margin: 20px auto;
+            text-align: center;
+            position: relative;
+        }
+        .steps-container .step-content {
+            display: none;
+        }
+        .steps-container .step-content.active {
+            display: block;
+        }
+        .steps-navigation {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 0 auto; /* Center align the images */
+            align-items: center;
+            margin-top: 20px;
         }
-        .images img {
-            width: 100%;
-            max-width: 100px;
-            border-radius: 10px;
+        .steps-navigation .step {
+            width: 20px;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        .steps-navigation .step.active {
+            background-color: #007bff;
+        }
+        .arrow {
+            font-size: 1.5em;
+            cursor: pointer;
+            margin: 0 10px;
+            user-select: none;
+            color: #007bff;
         }
         footer {
-            background-color: #fff;
-            color: #000;
+            background-color: #007bff;
+            color: white;
             padding: 20px;
             text-align: center;
+            margin-top: auto;
         }
         @media (max-width: 768px) {
-            .logo img {
-                width: 120px;
-                height: 120px;
+            .explanation p, .review-box p {
+                font-size: 0.9em;
             }
-            section h1 {
-                font-size: 1.5em;
+            .review-box button {
+                font-size: 0.9em;
+                padding: 8px 16px;
             }
-            form {
-                padding: 10px;
+            .steps-navigation .step {
+                width: 15px;
+                height: 15px;
             }
-            .contact-info a {
-                width: 40px;
-                height: 40px;
-            }
-            .contact-info a img {
-                width: 28px;
-                height: 28px;
+            .arrow {
+                font-size: 1.2em;
             }
         }
     </style>
@@ -185,39 +220,83 @@
             window.open('https://g.page/r/CWQ2boX-b6ZxEBM/review', '_blank');
         }
 
+        let currentStep = 0;
+        function showNextStep() {
+            const buttons = document.querySelectorAll('.steps-container .step-content');
+            if (currentStep < buttons.length - 1) {
+                buttons[currentStep].classList.remove('active');
+                currentStep++;
+                buttons[currentStep].classList.add('active');
+                updateStepsIndicator();
+            }
+        }
+
+        function showPreviousStep() {
+            const buttons = document.querySelectorAll('.steps-container .step-content');
+            if (currentStep > 0) {
+                buttons[currentStep].classList.remove('active');
+                currentStep--;
+                buttons[currentStep].classList.add('active');
+                updateStepsIndicator();
+            }
+        }
+
+        function updateStepsIndicator() {
+            const steps = document.querySelectorAll('.steps-navigation .step');
+            steps.forEach((step, index) => {
+                step.classList.remove('active');
+                if (index === currentStep) {
+                    step.classList.add('active');
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('reviewText').innerText = getRandomReview();
+            document.querySelector('.steps-container .step-content').classList.add('active');
+            updateStepsIndicator();
         });
     </script>
 </head>
 <body>
     <header>
-        <img src="baner_1.jpg" alt="Israel Delivery Banner">
+        <h1>Review Israel Delivery</h1>
     </header>
-    <div class="logo">
-        <img src="delivery_logo.jpg" alt="Israel Delivery Logo">
-    </div>
-    <nav aria-label="breadcrumb">
-        <ol>
-            <li><a href="index.html">Home</a></li>
-            <li aria-current="page">Review</li>
-        </ol>
-    </nav>
     <section>
+        <div class="explanation">
+            <h1>Review Process Explanation</h1>
+            <h2>1. Copy the Review</h2>
+            <p>Click "Copy Review" to copy the selected review text to your clipboard.</p>
+            
+            <h2>2. Go to Google Review Page</h2>
+            <p>Click "Go to Google Review Page" to open the Google review page.</p>
+            
+            <h2>3. Leave a Review on Google</h2>
+            <p>On the Google review page, give a 5-star rating, paste your copied review in the text box, and submit.</p>
+            
+            <p>You can navigate back and forth between the steps using the arrows below.</p>
+        </div>
         <div class="review-box">
-            <p id="reviewText"></p>
-            <button onclick="changeReview()">Change Review</button>
-            <button onclick="copyReview()">Copy Review</button>
-            <button onclick="goToGoogleReview()">Leave a Review on Google</button>
+            <p id="reviewText" class="review-text"></p>
+            <button class="change-review-btn" onclick="changeReview()">
+                <img src="sync.png" alt="Change Review">
+            </button>
+            <div class="steps-container">
+                <div id="step-1" class="step-content active">
+                    <button class="action-btn" onclick="copyReview(); showNextStep()">Copy Review</button>
+                </div>
+                <div id="step-2" class="step-content">
+                    <button class="action-btn" onclick="goToGoogleReview()">Go to Google Review Page</button>
+                </div>
+            </div>
+            <div class="steps-navigation">
+                <span class="arrow" onclick="showPreviousStep()">&#9664;</span>
+                <div class="step active"></div>
+                <div class="step"></div>
+                <span class="arrow" onclick="showNextStep()">&#9654;</span>
+            </div>
         </div>
     </section>
-    <div class="images-container">
-        <section class="images">
-            <img src="image_1.jpg" alt="Delivery Service Image 1">
-            <img src="image_2.jpg" alt="Delivery Service Image 2">
-            <img src="image_3.jpg" alt="Delivery Service Image 3">
-        </section>
-    </div>
     <footer>
         <p>Israel Delivery. All rights reserved 2024 ©</p>
     </footer>
