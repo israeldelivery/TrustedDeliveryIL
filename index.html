@@ -278,7 +278,7 @@
 
     <section id="contactForm" class="contact">
         <h2>Contact Us</h2>
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLScZt6agqo2_4OSJsbCurrYFUDznxmaJdCBW3iVO5UVOiYmiQA/formResponse" method="post" target="_self">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLScZt6agqo2_4OSJsbCurrYFUDznxmaJdCBW3iVO5UVOiYmiQA/formResponse" method="post" target="_self" onsubmit="redirectToThankYouPage(event)">
             <label for="name">Name<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
             <input type="text" id="name" name="entry.1200704287" required aria-required="true">
             <label for="phone">Phone<span class="black">(</span><span class="required">*</span><span class="black">)</span></label>
@@ -301,5 +301,14 @@
     <footer>
         <p>Israel Delivery. All rights reserved 2024 ©</p>
     </footer>
+    <script>
+    function redirectToThankYouPage(event) {
+        // Delay the redirection to ensure the form is submitted
+        setTimeout(function() {
+            window.location.href = "thank_you.html";
+        }, 500);  // זמן ההמתנה לפני ההפניה - 500ms כדי לוודא שהטופס נשלח
+    }
+</script>
+
 </body>
 </html>
